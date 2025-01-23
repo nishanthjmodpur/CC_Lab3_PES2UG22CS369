@@ -23,19 +23,26 @@ def get_cart(username: str) -> list:
     
     items = [content for cart_detail in cart_details for content in json.loads(cart_detail['contents'])]
     return [products.get_product(i) for i in items]
-    # for cart_detail in cart_details:
-    #     contents = cart_detail['contents']
-    #     evaluated_contents = eval(contents)  
-    #     for content in evaluated_contents:
-    #         items.append(content)
-    
-    # i2 = []
-    # for i in items:
-    #     temp_product = products.get_product(i)
-    #     i2.append(temp_product)
-    # return i2
 
+"""
+def get_cart(username: str) -> list:
+    cart_details = dao.get_cart(username)
+    if cart_details is None:
+        return []
     
+    items = []
+    for cart_detail in cart_details:
+        contents = cart_detail['contents']
+        evaluated_contents = eval(contents)  
+        for content in evaluated_contents:
+            items.append(content)
+    
+    i2 = []
+    for i in items:
+        temp_product = products.get_product(i)
+        i2.append(temp_product)
+    return i2
+"""
 
 
 def add_to_cart(username: str, product_id: int):
