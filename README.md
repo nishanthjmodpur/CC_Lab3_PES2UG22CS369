@@ -1,4 +1,4 @@
-Optimized codes can be found in directories:
+Optimized codes can be found in:
 
 1. /checkout/__init__.py
 2. /cart/__init__.py
